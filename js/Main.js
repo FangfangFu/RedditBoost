@@ -1173,6 +1173,29 @@ var RedditBoostPlugin;
     }(utils.Singleton));
     RedditBoostPlugin.Mirror = new MirrorPlugin();
 })(RedditBoostPlugin || (RedditBoostPlugin = {}));
+var RedditBoostPlugin;
+(function (RedditBoostPlugin) {
+    var NewTabSwitchPlugin = (function (_super) {
+        __extends(NewTabSwitchPlugin, _super);
+        function NewTabSwitchPlugin() {
+            _super.apply(this, arguments);
+            this._newTabButton = "<div id='disableNewTab' class='disableNewTab'>Disable New Tab</div>";
+        }
+        Object.defineProperty(NewTabSwitchPlugin.prototype, "init", {
+            get: function () { return this._init; },
+            enumerable: true,
+            configurable: true
+        });
+        NewTabSwitchPlugin.prototype._init = function () {
+            this.setSingleton();
+            $(document).ready(function () {
+                $("a.title").attr('target', '_blank');
+            });
+        };
+        return NewTabSwitchPlugin;
+    }(utils.Singleton));
+    RedditBoostPlugin.NewTabSwitch = new NewTabSwitchPlugin();
+})(RedditBoostPlugin || (RedditBoostPlugin = {}));
 var RedditBoost;
 (function (RedditBoost) {
     $(document).ready(function () {
@@ -1183,5 +1206,6 @@ var RedditBoost;
         RedditBoostPlugin.BanCustomCss.init();
         RedditBoostPlugin.HoverPreview.init();
         RedditBoostPlugin.Mirror.init();
+        RedditBoostPlugin.NewTabSwitch.init();
     });
 })(RedditBoost || (RedditBoost = {}));

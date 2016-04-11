@@ -14,6 +14,7 @@ Ideas:
 /// <reference path='features/BanCustomCss.ts'/>
 /// <reference path='features/HoverPreview.ts'/>
 /// <reference path='features/Mirror.ts'/>
+/// <reference path='features/NewTabSwitch.ts'/>
 
 namespace RedditBoost {
     $(document).ready(function() {
@@ -25,5 +26,6 @@ namespace RedditBoost {
         RedditBoostPlugin.BanCustomCss.init();
         RedditBoostPlugin.HoverPreview.init();
         RedditBoostPlugin.Mirror.init();
+        RedditBoostPlugin.NewTabSwitch.init();
     });
 }
